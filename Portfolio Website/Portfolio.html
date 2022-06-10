@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Stanley Rayevskiy</title>
+        <link rel='stylesheet' href='Style.css'>
+        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div class = 'Links'>
+            <a href="javascript:document.getElementById('Skills').scrollIntoView(true);" id = 'linksText'> Skills </a>
+            <a href="javascript:document.getElementById('MyWork').scrollIntoView(true);" id = 'linksText'> Projects </a>
+            <a href="javascript:document.getElementById('Education').scrollIntoView(true);" id = 'linksText'> Education </a>
+            
+
+        </div>
+
+        <div class = 'Title'>
+            <h1> STANLEY </h1>
+            <h1> RAYEVSKIY </h1>
+            <h2> Programmer From Ontario, Canada</h2>
+        </div>
+
+        <div id = 'Skills'>
+            <h1 id='h1Throughout'>Language Skills</h1>
+            <! placing graph dimensions >
+            <canvas id="myChart" width="800" height="400"></canvas>
+            <! code for graph >
+            <script>
+                const labels = [
+                 'C++',
+                 'Java',
+                 'Javascript',
+                 'HTML',
+                 'CSS'
+                ];
+              
+                const data = {
+                  labels: labels,
+                  datasets: [{
+                    label: 'Relative Skill Rating',
+                    backgroundColor: 'rgb(0, 196, 33)',
+                    data: [100, 90, 30, 30, 30],
+                  }]
+                };
+              
+                const config = {
+                  type: 'bar',
+                  data: data,
+                  options: {
+                      plugins: {
+                          legend: { 
+                              display: false,
+                          }
+                      },
+                      scales: {
+                        y: {
+                            ticks: {
+                                color: 'white',
+                                font: {
+                                    size: 18,
+                                    family: 'Roboto Mono',
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white',
+                                font: {
+                                    size: 18,
+                                    family: 'Roboto Mono',
+                                }
+                            }
+                        }
+                      }
+                }
+                };
+              </script>
+            <! code to render graph>
+              <script>
+                const myChart = new Chart(
+                  document.getElementById('myChart'),
+                  config
+                );
+              </script>
+        </div>
+
+        <div class = 'SkillsText'>
+            <p id='paragraphTextCenter'>This graph shows my relative skill at each langauge.</p>
+            <p id='paragraphTextCenter'>I believe that my experiences have given me a good grasp on how coding works, and my knowlege could be transferred to learn other langauges as well.</p>
+        </div>
+
+        <div id = 'MyWork'>
+            <h1 id='h1Throughout'> Projects </h1>
+            <div class = 'RetroRoll'>
+                <div class = 'RetroRollImage'>
+                    <img src ='RetroRollIcon.png' height='350' width='350' id='RetroRollPNG'>
+                </div>
+                <div class = 'RetroRollText'>
+                    <h2 id='ParagraphTitles'> RETRO ROLL </h2>
+                    <p id='paragraphText'> Retro Roll is a hyper-casual-infinte-runner game created for Android. It was developed using Unreal Engine 4, and the game was written using both 
+                        C++ and a C++ based scripting system called Blueprint. 
+                    </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.YourCompany.ROLL&hl=en&gl=US" class='button'> Google Play </a>
+                </div>
+            </div>
+        </div>
+        <div id = 'Education'>
+            <h1 id='h1Throughout'> Education </h1>
+            <p id='paragraphTextCenter'> <strong> Ontario Secondary School Diploma </strong> </p>
+            <p id='paragraphTextCenter'> 2018-2022 </p>
+
+        </div>
+    </body>
+</html>
